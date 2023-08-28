@@ -1,0 +1,63 @@
+.control_grid {
+  display: flex;
+  width: 1280px;
+  height: 720px;
+  background-image: url(./img/markus-spiske-Fk600Fgg_24-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.item1,
+.item2,
+.item3,
+.item4 {
+  margin: 0 50px;
+  width: 200px;
+  height: 300px;
+  border: 3px solid black;
+  box-shadow: 0 0 2rem 0.5rem black;
+  font-size: 2.8em;
+  color: white;
+  text-align: center;
+  text-shadow: 0.2rem 0.2rem black;
+}
+
+.active {
+  border: 3px solid rgb(255, 255, 255);
+  box-shadow: 0 0 2rem 1rem rgb(102, 247, 12);
+}
+
+.item1 {
+  background-image: url(./img/brooke-lark-HjWzkqW1dgI-unsplash.jpg);
+  background-size: contain;
+
+  flex-shrink: 0;
+}
+.item2 {
+  background-image: url(./img/wesley-tingey-JOhjfzjeJLw-unsplash.jpg);
+  background-size: contain;
+  flex-shrink: 0;
+}
+.item3 {
+  background-image: url(./img/muhammad-faiz-zulkeflee-alw-CwGFmwQ-unsplash.jpg);
+  background-size: contain;
+  flex-shrink: 0;
+}
+
+.item4 {
+  background-color: white;
+  background-image: url(./img/111593992-turn-off-icon-on-a-white-background-isolated-turn-off-symbol-with-flat-style.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  flex-shrink: 0;
+}
+
+.control_grid p {
+  display: block;
+  margin: 0;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+}

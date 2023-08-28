@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="control_grid">
+      <div class="button item1 active"><p>QSR</p></div>
+      <div class="button item2"><p>Fashion</p></div>
+      <div class="button item3"><p>Corporate</p></div>
+      <div class="button item4"><p>On / Off</p></div>
+    </div>
+
+    <script>
+      function clicked(e) {
+        this.classList.toggle("active");
+      }
+      const buttons = document.querySelectorAll(".button");
+      buttons.forEach((button) => button.addEventListener("click", clicked));
+    </script>
+  </body>
+</html>
