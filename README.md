@@ -9,6 +9,9 @@ The content is played from the internal storage of the screen, no need to run an
 Be aware that in this code, the credentials are visible to everyone who has access to the browser running the page!
 Provided as is - Please audit the code before using it.  
 
+<img width="985" alt="image" src="https://github.com/TBEMSESG/showroomController/assets/50730110/ec4b9fd7-bbe4-47f0-9028-a3ed89bb99ac">
+
+
 ## Prerequisite:
 
     - MagicINFO Server (reachable from the screen)
