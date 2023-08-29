@@ -1,15 +1,12 @@
 //copy secrets here and remove before commit
 // const cred = {}; //add your credentials here in format {username:"cc", password:"xx"}
-// const apiURL = "https://YourSERVER/MagicInfo/auth"; //add your MI Api url here
+// const apiURL = "https://YourSERVER/MagicInfo/auth"; //add your MI Api url here   3LbNzTO4Mh2U4FsQ8T
 // const apiURLChannelChange = "https://YourSERVER/MagicInfo/restapi/v2.0/rms/devices/quick-control"
 
-const cred = {"username" : "admin","password" : "Samsung2Demo!"}; //add your credentials here in format {username:"cc", password:"xx"}
-const apiURL = "https://in.sesg.ch/MagicInfo/auth"; //add your MI Api url here
-const apiURLChannelChange = "https://in.sesg.ch/MagicInfo/restapi/v2.0/rms/devices/quick-control"
+
 
 //devices and settings
-const devicesId = ['8c-79-f5-90-d8-2b','38-68-a4-95-e3-3a','8c-79-f5-90-d8-39','8c-79-f5-90-d8-27','38-68-a4-95-e3-3d'];
-
+const devicesId = ['8c-79-f5-90-d8-2b','38-68-a4-95-e3-3a','8c-79-f5-90-d8-39','8c-79-f5-90-d8-27','38-68-a4-95-e3-3d','70-2a-d5-19-ab-80','70-2a-d5-19-ac-41','d0-03-df-12-f5-ea','38-68-a4-8a-12-dd','38-68-a4-b0-09-75','d0-03-df-27-4e-f8'];
 const channelQSR = 3;
 const channelFashion = 2;
 const channelCorporate = 1;
@@ -44,34 +41,37 @@ const buttons = document.querySelectorAll(".button");
 buttonQSR.addEventListener('click', ()=> { getAuth(apiURL, cred)
     .then((res) => {
         changeChannel(apiURLChannelChange,dataQSR, res.token)
-                .then((final)=> console.log(final))
-                .then( buttons.forEach((button) => button.classList.remove("active")))
-                .then(buttonQSR.classList.toggle("active"))
-                .catch((err) => console.log(err));  
+                .then( buttons.forEach((button) => button.classList.remove("active", "error")))
+                .then((final)=> { 
+                    final.items.successList ? buttonQSR.classList.add("active") : buttonQSR.classList.add("error") ;
+                })
+                .catch((err) => {buttonQSR.classList.add("error"); console.log("Could not call APi endpoint ->",err)});  
         })
-    .catch((err) => console.log(err))
+    .catch((err) => console.log("Could not retrive a token ->", err))
     });
 
 buttonFashion.addEventListener('click', ()=> { getAuth(apiURL, cred)
     .then((res) => {
         changeChannel(apiURLChannelChange,dataFashion, res.token)
-                .then((final)=> console.log(final))
-                .then( buttons.forEach((button) => button.classList.remove("active")))
-                .then(buttonFashion.classList.toggle("active"))
-                .catch((err) => console.log(err));  
+        .then( buttons.forEach((button) => button.classList.remove("active", "error")))
+        .then((final)=> { 
+            final.items.successList ? buttonFashion.classList.add("active") : buttonFashion.classList.add("error") ;
         })
-    .catch((err) => console.log(err))
+        .catch((err) => {buttonFashion.classList.add("error"); console.log("Could not call APi endpoint ->",err)});  
+})
+.catch((err) => console.log("Could not retrive a token ->", err))
     });
 
 buttonCorporate.addEventListener('click', ()=> { getAuth(apiURL, cred)
     .then((res) => {
         changeChannel(apiURLChannelChange,dataCorporate, res.token)
-                .then((final)=> console.log(final))
-                .then( buttons.forEach((button) => button.classList.remove("active")))
-                .then(buttonCorporate.classList.toggle("active"))
-                .catch((err) => console.log(err));  
+        .then( buttons.forEach((button) => button.classList.remove("active", "error")))
+        .then((final)=> { 
+            final.items.successList ? buttonCorporate.classList.add("active") : buttonCorporate.classList.add("error") ;
         })
-    .catch((err) => console.log(err))
+        .catch((err) => {buttonCorporate.classList.add("error"); console.log("Could not call APi endpoint ->",err)});  
+})
+.catch((err) => console.log("Could not retrive a token ->", err))
     });
 
 //Call API Call
