@@ -1,15 +1,19 @@
 
 # HTML / JS -> MagicINFO API
-This is a simple idea on how to use a Browser to controll content on other screens.
+This is a simple project to use a Browser to control content on other screens.
+A screen shows a webpage with some button. Clicking one of the button calls an API Endpoint to change the Channel on other screen(s)
+
 The content is played from the internal storage of the screen, no need to run any webserver.
 
-[!WARNING]
+> **WARNING**
 Be aware that in this code, the credentials are visible to everyone who has access to the browser running the page!
 Provided as is - Please audit the code before using it.  
 
 ## Prerequisite:
 
     - MagicINFO Server (reachable from the screen)
+    - Samsung Devices connected to the MagicINFO Server
+    - Schedule with 2(+) channels to switch 
 
 ## How to Start
 clone this repo to your local workspace
