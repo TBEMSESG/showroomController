@@ -1,15 +1,17 @@
 
 # HTML / JS -> MagicINFO API
-This is a simple project to use a browser to control content on screens.
+This is a simple project to use a browser to control power and content of the screens.
 A screen shows a webpage with some buttons. Clicking one of the buttons calls an API Endpoint to change the channel on other screen(s).
 
-The content is played from the internal storage of the screen, so there is no need to run a webserver.
+The content is played from the internal storage of the screen, so there is no need to run a separate webserver.
 
 > **WARNING**
 Be aware that in this code, the credentials are visible to everyone who has access to the browser running the page!
 Provided as is - Please audit the code before using it.  
 
 <img width="985" alt="image" src="https://github.com/TBEMSESG/showroomController/assets/50730110/ec4b9fd7-bbe4-47f0-9028-a3ed89bb99ac">
+
+<img width="766" alt="image" src="https://github.com/TBEMSESG/showroomController/assets/50730110/3d9c3eb4-74f0-4fff-86cd-ec81eb9888e9">
 
 
 ## Prerequisite:
