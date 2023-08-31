@@ -2,15 +2,27 @@
 // const cred = {}; //add your credentials here in format {username:"cc", password:"xx"}
 // const apiURL = "https://YourSERVER/MagicInfo/auth"; //add your MI Api url here   3LbNzTO4Mh2U4FsQ8T
 // const apiURLChannelChange = "https://YourSERVER/MagicInfo/restapi/v2.0/rms/devices/quick-control"
-// const apiURLPower = "https://YourSERVER/MagicInfo/restapi/v2.0/rms/devices/quick-control"
 
 
 //devices and settings
 const devicesId = ['8c-79-f5-90-d8-2b','38-68-a4-95-e3-3a','8c-79-f5-90-d8-39','8c-79-f5-90-d8-27','38-68-a4-95-e3-3d','70-2a-d5-19-ab-80','70-2a-d5-19-ac-41','d0-03-df-12-f5-ea','38-68-a4-8a-12-dd','38-68-a4-b0-09-75','d0-03-df-27-4e-f8'];
-const devicesIdAll = []
+const devicesIdAll = ['c0-23-8d-98-6e-30','54-3a-d6-be-45-4a','80-47-86-c8-ef-99','d0-03-df-13-71-d5','b8-bc-5b-dc-e8-9c','10-2b-41-81-4d-c3','8c-79-f5-90-d8-2b','38-68-a4-95-e3-3a','8c-79-f5-90-d8-39','8c-79-f5-90-d8-27','38-68-a4-95-e3-3d','70-2a-d5-19-ab-80','70-2a-d5-19-ac-41','d0-03-df-12-f5-ea','38-68-a4-8a-12-dd','38-68-a4-b0-09-75','d0-03-df-27-4e-f8'];
 const channelQSR = 3;
 const channelFashion = 2;
 const channelCorporate = 1;
+
+const PowerOn = {
+    deviceIds: devicesIdAll,
+    menu: 'power',
+    productType: 'string',
+    value: 1
+}
+const PowerOff = {
+    deviceIds: devicesIdAll,
+    menu: 'power',
+    productType: 'string',
+    value: 0
+}
 
 const dataQSR = {
     deviceIds: devicesId,
@@ -35,7 +47,8 @@ const dataCorporate = {
 const buttonQSR = document.querySelector(".item1");
 const buttonFashion = document.querySelector(".item2");
 const buttonCorporate = document.querySelector(".item3");
-const buttonOnOff = document.querySelector(".item4");
+const buttonOn = document.querySelector(".item4");
+const buttonOff = document.querySelector(".item5");
 const buttons = document.querySelectorAll(".button");
 
 // Eventlisteners
@@ -73,6 +86,22 @@ buttonCorporate.addEventListener('click', ()=> { getAuth(apiURL, cred)
         .catch((err) => {buttonCorporate.classList.add("error"); console.log("Could not call APi endpoint ->",err)});  
 })
 .catch((err) => console.log("Could not retrive a token ->", err))
+    });
+
+buttonOn.addEventListener('click', ()=> { getAuth(apiURL, cred)
+    .then((res) => {
+        changeChannel(apiURLChannelChange,PowerOn, res.token)
+                .catch((err) => {buttonOn.classList.add("error"); console.log("Could not call APi endpoint ->",err)});  
+        })
+    .catch((err) => console.log("Could not retrive a token ->", err))
+    });
+
+buttonOff.addEventListener('click', ()=> { getAuth(apiURL, cred)
+    .then((res) => {
+        changeChannel(apiURLChannelChange,PowerOff, res.token)
+                .catch((err) => {buttonOff.classList.add("error"); console.log("Could not call APi endpoint ->",err)});  
+        })
+    .catch((err) => console.log("Could not retrive a token ->", err))
     });
 
 //Call API Call
