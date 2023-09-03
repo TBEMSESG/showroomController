@@ -52,6 +52,8 @@ Details:
 | cred | `{}` |  add your MagicINFO credentials here in format `{username:"cc", password:"xx"}`|
 | apiURL | `""` | add your MI API URL here in format `https://<YourSERVER><YOURPORT>/MagicInfo/auth` replacing the <> part|
 | apiURLChannelChange | `""` | `https://<YourSERVER><YOURPORT>/MagicInfo/restapi/v2.0/rms/devices/quick-control` replacing the <> part |
+| devicesId | `[]` | Add device ID's in format `['deviceId1', 'deviceId2', ....]` |
+| channelQSR / channelFashion / ChannelCorporate | `1 / 2 / 3 `| Channel number based on your Schedule | 
 
 
 ### Packaging
