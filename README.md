@@ -46,6 +46,14 @@ The following variables have to be defined:
     const channelFashion = 2;
     const channelCorporate = 1;
 
+Details:
+|variable|default value | description
+|---|----|---|
+| cred | `{}` |  add your MagicINFO credentials here in format `{username:"cc", password:"xx"}`|
+| apiURL | `""` | add your MI API URL here in format `https://<YourSERVER><YOURPORT>/MagicInfo/auth` replacing the <> part|
+| apiURLChannelChange | `""` | `https://<YourSERVER><YOURPORT>/MagicInfo/restapi/v2.0/rms/devices/quick-control` replacing the <> part |
+
+
 ### Packaging
 - Once ready, package the content of the schowroomController folder (only the content, incl. /img folder) to a .zip file.
 - Upload the zip as web content to MagicINFO
